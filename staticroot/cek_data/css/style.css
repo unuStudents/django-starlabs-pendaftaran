@@ -1,0 +1,16 @@
+.label_cek {
+    /* position: absolute; */
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    color: #222; 
+}
+
+.garis_p {
+    border-bottom: 1px solid #999;
+}

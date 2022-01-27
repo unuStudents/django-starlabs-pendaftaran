@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block body%}
+<div class="signup-form">
+    <h2 class="form-title">Starlabs | {{ judul }}</h2>
+    <form action="" method="POST" class="register-form">
+        {% csrf_token %}
+        {{ form }}
+        <div class="form-group form-button">
+            <input type="submit" name="signup" id="signup" class="form-submit" value="Cari Kuy ..." />
+        </div>
+    </form>
+    <br>
+    {% for hasil in data %}
+    <div class="form-group">
+        <label for="name" class="label_cek">NAMA</i></label>
+        <p class="garis_p">{{ hasil.nama }}</p>
+    </div>
+    <div class="form-group">
+        <label for="name" class="label_cek">PRODI</i></label>
+        <p class="garis_p">{{ hasil.prodi }}</p>
+    </div>
+    <div class="form-group">
+        <label for="name" class="label_cek">NIM</i></label>
+        <p class="garis_p">{{ hasil.nim }}</p>
+    </div>
+    <div class="form-group">
+        <label for="name" class="label_cek">EMAIL AKTIF</i></label>
+        <p class="garis_p">{{ hasil.email_aktif }}</p>
+    </div>
+    <div class="form-group">
+        <label for="name" class="label_cek">TANGGAL LAHIR</i></label>
+        <p class="garis_p">{{ hasil.tgl_lahir }}</p>
+    </div>
+    {% endfor %}
+</div>
+<div class="signup-image">
+    <figure>
+        <img src="{% static 'pendaftaran/images/signup-image.jpg' %}" alt="sing up image" />
+    </figure>
+    <p class="p_tengah">STARLABS | UNUGHA | 2022</p>
+</div>
+{% endblock %}
