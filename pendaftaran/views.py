@@ -14,8 +14,8 @@ def index(request):
                 'form'  :form,
             }
             return HttpResponseRedirect('konfirmasi-sukses')
-        else:
-            form = FormPendaftaran()
+        # else:
+        #     form = FormPendaftaran()
 
     else:
         form = FormPendaftaran()
