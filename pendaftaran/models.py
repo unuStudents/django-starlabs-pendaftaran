@@ -13,7 +13,7 @@ class User(models.Model):
     )
     nama        = models.CharField(max_length=100,)
     prodi       = models.CharField(max_length=5, choices=PRODI, default='Sistem Informasi')
-    nim         = models.IntegerField(unique=True)
+    nim         = models.BigIntegerField(unique=True)
     # nim         = models.CharField(unique=True, max_length=15)
     email_aktif = models.EmailField(max_length=40, unique=True, null=False)
     tgl_lahir   = models.DateField(null=False)
