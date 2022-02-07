@@ -1,20 +1,20 @@
-import email
+import uuid
 from django.db import models
 
 # Create your models here.
 class User(models.Model):
     PRODI       = (
-        ('SI', 'Sistem Informasi'),
-        ('TI', 'Teknik Informatika'),
-        ('MTK', 'Matematika'),
-        ('MNJ', 'Manajemen'),
-        ('EP', 'Ekonomi Pembangunan'),
-        ('PGSD', 'Pendidikan Guru Sekolah Dasar'),
+        ('Sistem Informasi', 'Sistem Informasi'),
+        ('Teknik Informatika', 'Teknik Informatika'),
+        ('Matematika', 'Matematika'),
+        ('Manaajemen', 'Manajemen'),
+        ('Ekonomi Pembangunan', 'Ekonomi Pembangunan'),
+        ('Pendidikan Guru Sekolah Dasar', 'Pendidikan Guru Sekolah Dasar'),
     )
+    id          = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     nama        = models.CharField(max_length=100,)
-    prodi       = models.CharField(max_length=5, choices=PRODI, default='Sistem Informasi')
+    prodi       = models.CharField(max_length=35, choices=PRODI, default='Sistem Informasi')
     nim         = models.BigIntegerField(unique=True)
-    # nim         = models.CharField(unique=True, max_length=15)
     email_aktif = models.EmailField(max_length=40, unique=True, null=False)
     tgl_lahir   = models.DateField(null=False)
 

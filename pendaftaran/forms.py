@@ -7,14 +7,14 @@ class FormPendaftaran(ModelForm):
         model = User
         fields = '__all__'
 
-        PRODI = (
-            ('SI', 'Sistem Informasi'),
-            ('TI', 'Teknik Informatika'),
-            ('MTK', 'Matematika'),
-            ('MNJ', 'Manajemen'),
-            ('EP', 'Ekonomi Pembangunan'),
-            ('PGSD', 'Pendidikan Guru Sekolah Dasar'),
-        )
+        PRODI       = (
+        ('Sistem Informasi', 'Sistem Informasi'),
+        ('Teknik Informatika', 'Teknik Informatika'),
+        ('Matematika', 'Matematika'),
+        ('Manaajemen', 'Manajemen'),
+        ('Ekonomi Pembangunan', 'Ekonomi Pembangunan'),
+        ('Pendidikan Guru Sekolah Dasar', 'Pendidikan Guru Sekolah Dasar'),
+    )
 
         widgets = {
             'nama'          : forms.TextInput({'PlaceHolder':'Masukan Nama Lengkap', 'autocomplete': 'off'}),
