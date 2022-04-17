@@ -20,9 +20,10 @@ from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('pendaftaran.urls')),
-# ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path("admin/", admin.site.urls),
+    path("", include("pendaftaran.urls")),
+    path("", include("cek_data.urls")),
+    # ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 ]
 
 if settings.DEBUG:
